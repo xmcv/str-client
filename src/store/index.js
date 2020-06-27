@@ -32,6 +32,7 @@ export default new Vuex.Store({
       state.user = null
     }
   },
+  //C.
   actions: {
     async login ({ commit }, { email, password }) {
       const response = await v1.post('/login', {
@@ -47,7 +48,7 @@ export default new Vuex.Store({
       localStorage.setItem('token', token)
       localStorage.setItem('userId', userId)
       router.push('/customer')
-    },
+    }, //-
     async fetchUser ({ commit, state }) {
       const response = await v1.get('/users/' + state.userId)
       const user = response.data
